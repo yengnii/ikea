@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKEA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/footer.css">
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>IKEA</h1>
+            <div class="nav top_nav">
+                <ul>
+                    <li><a href="#">침실</a></li>
+                    <li><a href="#">거실</a></li>
+                    <li><a href="#">주방</a></li>
+                    <li><a href="#">다이닝</a></li>
+                    <li><a href="#">어린이</a></li>
+                    <li><a href="#">욕실</a></li>
+                    <li><a href="#">홈오피스</a></li>
+                    <li><a href="#">현관</a></li>
+                    <li><a href="#">야외공간</a></li>
+                    <li><a href="#">IKEA for Business</a></li>
+                </ul>
+            </div>
+            <div class="top_member top_nav">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <!-- <li><a href="#">주문조회</a></li> -->
+                    <li><a href="#"><i class='bx bx-heart'></i></a></li>
+                    <li><a href="#"><i class='bx bx-cart'></i></a></li>
+                </ul>
+            </div>
+        </header>
+        <div id="container">
+            <div class="banner">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="/images/br_banner01.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/images/br_banner02.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/images/br_banner03.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/images/br_banner04.jpg" alt="">
+                    </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <!-- Swiper JS -->
+                <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+                <!-- Initialize Swiper -->
+                <script>
+                    var swiper = new Swiper(".mySwiper", {
+                    pagination: {
+                        el: ".swiper-pagination",   
+                        dynamicBullets: true,                     
+                        clickable: true,
+                        },
+                    });
+                </script>
+            </div>
+            <div class="contents">
+                
+            </div>
+            <div class="contents"></div>
+        </div>
+        <footer>
+            <div class="bt_container">
+                <div class="bt_menu">
+                    <!-- <div class="bt_featuredlink">
+                        <ul>
+                            <li><h2>IKEA Family</h2></li>
+                            <li>지금 IKEA Family에 무료로 가입하고
+                                다양한 멤버 전용 혜택을 누리세요.</li>
+                            <li><a href="#">자세히보기</a></li>
+                            <li><button>IKEA Family 가입하기</button></li>
+                        </ul>
+                    </div>
+                    <div class="bt_accordion">
+                        <ul>
+                            <li>
+                                <a href="#">고객문의</a>
+                                <ul>
+                                    <li><a href="#">고객지원</a></li>
+                                    <li><a href="#">자주 묻는 질문</a></li>
+                                    <li><a href="#">문의하기</a></li>
+                                    <li><a href="#">배송조회</a></li>
+                                    <li><a href="#">교환환불</a></li>
+                                    <li><a href="#">품질보증</a></li>
+                                    <li><a href="#">제품리콜</a></li>
+                                    <li><a href="#">피드백</a></li>
+                                    <li><a href="#">부품신청</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">쇼핑하기</a>
+                                <ul>
+                                    <li><a href="#">쇼핑하기</a></li>
+                                    <li><a href="#">전화주문</a></li>
+                                    <li><a href="#">IKEA for Business</a></li>
+                                    <li><a href="#">셀프 플래닝</a></li>
+                                    <li><a href="#">IKEA 모바일 앱</a></li>
+                                    <li><a href="#">제품 사용 팁/가이드</a></li>
+                                    <li><a href="#">제품 구매 가이드</a></li>
+                                    <li><a href="#">결제 옵션</a></li>
+                                    <li><a href="#">기프트 카드</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">서비스</a>
+                                <ul>
+                                    <li><a href="#">IKEA 서비스</a></li>
+                                    <li><a href="#">배송 서비스</a></li>
+                                    <li><a href="#">조립 서비스</a></li>
+                                    <li><a href="#">설치 서비스</a></li>
+                                    <li><a href="#">주방 서비스</a></li>
+                                    <li><a href="#">플래닝 서비스</a></li>
+                                    <li><a href="#">인테리어 디자인 서비스</a></li>
+                                    <li><a href="#">바이백 서비스</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">IKEA 이야기</a>
+                                <ul>
+                                    <li><a href="#">브랜드 소개</a></li>
+                                    <li><a href="#">집에서의 삶</a></li>
+                                    <li><a href="#">지속가능한 생활</a></li>
+                                    <li><a href="#">내가 아끼는 집, 나를 아끼는 집</a></li>
+                                    <li><a href="#">뉴스룸</a></li>
+                                    <li><a href="#">채용정보</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <div class="bt_basic bt_utilities">
+                        <div class="sns_box">
+                            <ul>
+                                <li><a href="#">
+                                    <i class='bx bxl-facebook-circle' ></i>facebook</a></li>
+                                <li><a href="#">
+                                    <i class='bx bxl-instagram' ></i>instargram</a></li>
+                                <li><a href="#">
+                                    <i class='bx bxl-youtube' ></i>youtube</a></li>
+                                <li><a href="#">
+                                    <i class='bx bx-message-rounded-dots' ></i>kakaochannel</a></li>
+                            </ul>
+                        </div>
+                        <div class="language_selector">
+                            <div class="change_country">
+                                <button>국가변경</button>
+                            </div>
+                            <div class="change_language">
+                                <select name="change_language" id="select_country">
+                                    <option value="kor">한국어</option>
+                                    <option value="en">English</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bt_basic bt_corparea">
+                        <div class="bt_copyright">
+                            <p>© Inter IKEA Systems B.V 1999-2022
+                            </p>
+                        </div>
+                        <div class="bt_legalLinks">
+                            <ul>
+                                  <li><a href="#">개인정보처리방침</a></li>
+                                  <li><a href="#">쿠키 정책</a></li>
+                                  <li><a href="#" >쿠키 설정</a></li>
+                                  <li><a href="#">웹사이트 이용약관</a></li>
+                                  <li><a href="#">Responsible disclosure</a></li>
+                            </ul>
+                          </div>
+                    </div>
+                    <div class="bt_basic bt_company">
+                        <div class="bt_companyinfo">
+                          <p>IKEA 코리아<br>주소 : (우) 14352  경기도 광명시 일직로 17 IKEA광명점<br>사업자 등록번호 : 106-86-82871 <a href="#">사업자정보확인</a><br>대표자 : 프레드릭 요한손<br>통신판매업 신고 : 2018-경기광명-0209<br>TEL : 1670-4532</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
