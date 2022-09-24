@@ -1,0 +1,31 @@
+/* .accordion_container{ width: 100%; } */
+.accordion_box {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.accordion_title {
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid var(--basic-ikea-color);
+    color: var(--basic-ikea-color);
+    padding: 0 20px;
+    line-height: 45px;
+    font-weight: 900;
+}
+/* .accordion_title.active, */
+.accordion_title:hover {
+    background-color: skyblue;
+}
+
+.accordion_content.active{
+    /* border: 1px solid skyblue; */
+    display: block;
+}
+.accordion_content {
+    transition: .3s;
+    display: none;
+    padding: 20px;
+    /* height: 200px; */
+}
