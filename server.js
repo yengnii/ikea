@@ -13,9 +13,17 @@ app.get('/', (req, res)=> {
     res.sendFile(path.join(__dirname, 'views') + 'index.html' );
 })
 
+app.get('/index', (req, res)=> {
+    res.sendFile(path.join(__dirname, 'views') + 'index.html' );
+})
+
 app.get('/sub', (req, res)=>{ 
     res.sendFile( path.join( __dirname, 'views', 'sub.html' ))
-  })
+})
+
+app.get('/indexEng', (req, res)=>{ 
+    res.sendFile( path.join( __dirname, 'views', 'indexEng.html' ))
+})
 
 app.get('/*', (req, res)=> {
     console.log(req.url);

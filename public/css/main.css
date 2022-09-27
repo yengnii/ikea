@@ -7,6 +7,7 @@
 }
 #wrap {
     /* width: 1600px; */
+    position: relative;
     width: 100%;
     /* height: 800px; */
     margin: 0 auto;
@@ -16,20 +17,29 @@
 
 /* header */
 header {
-    width: 80%;
-    /* height: 50px; */
-    margin: 0 auto;
-    padding: 10px 30px;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
+    width: 100%;
+}
+.header_box{
+  width: 80%;
+  /* height: 50px; */
+  margin: 0 auto;
+  padding: 10px 30px;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+
+}
+.fixedNav{
+  position: fixed;
+  background: white;
+  z-index: 111;
 }
 .header_main_box{
   display: flex;
   /* justify-content: space-between; */
   /* gap : 20px; */
   align-items: center;
-  margin-top: 20px;
+  margin: 20px auto 0;
 }
 .header_main_box h1{
   font-size: 0;
@@ -69,7 +79,7 @@ header {
 .register_box li:nth-child(1) {
   /* background-color : var(--basic-ikea-color); */
   /* color: #fff; */
-  border: 2px solid var(--basic-ikea-color);
+  border: 1px solid var(--basic-ikea-color);
   border-radius: 50px;
   color: var(--basic-ikea-color);
   height: 40px;
@@ -185,35 +195,41 @@ header {
 }
 /* category_container */
 
-.mySecondSwiper {
+.mySwiper02 {
   display: flex;
 }
-.swiper-slide02 {
-  width: 100px;
-  height: 100px;
+.mySwiper02 .swiper-wrapper {
+  padding-bottom: 30px;
+}
+.mySwiper02 .swiper-slide {
+  width: 164px;
+  height: 164px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 100px;
   /* background-color: var(--basic-ikea-color); */
 }
-.swiper-slide02 img {
-  width: 94px;
-  height: 94px;
+.mySwiper02 .swiper-slide img {
+  width: 95%;
+  height: 95%;
+  padding-bottom: 10px;
+}
+.mySwiper02 span {
+  display: block; 
+  font-size: 16px;
+  line-height: 20px;
 }
 
 /* service_container */
 .contents {
   width: 80%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 .contents h2 {
   font-size: 25px;
-  margin-bottom: 10px;
-}
-.service_container {
-  
+  margin-bottom: 20px;
 }
 .service_container ul {
   display: flex;
@@ -263,28 +279,30 @@ header {
 
 }
 .event_section {
-  width: 100%;
+  /* width: 100%; */
+  /* height: 100%; */
   display: flex;
   justify-content: space-around;
-  align-items: center;
   gap: 20px;
   /* overflow: hidden; */
 }
 .event_box {
-  border: 1px solid black;
   box-sizing: border-box;
-  background-color: royalblue;
+  background-color: var(--basic-ikea-color);
+  color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  align-items: center;
+  flex-basis: calc((100% - 1.25rem * 3) / 3);
 }
-.event_box > span {
-  display: block;
-  width: calc(100% /3);
-  height: calc(100% /3);
+.event_box .event_img {
+  width: 100%;
+  height: 450px;
 }
 .event_box img {
-  /* width: 100%; */
-  /* height: 100%; */
-  height: 480px;
-
+  /* display: none; */
+  width: 100%;
+  height: 100%;
 }
 .event_box .event_descript {
   /* width: 100%; */
@@ -295,7 +313,8 @@ header {
 .event_box .event_descript h3 {
   font-weight: 800;
   font-size: 25px;
-  color: white;
+  margin-bottom: 10px;
+  /* color: white; */
 }
 .event_box .event_descript p {
   font-size: 16px;
@@ -311,4 +330,7 @@ header {
   display: block;
   position: absolute;
   bottom: 20px;
+}
+.event_box .event_descript i {
+  color: black;
 }
