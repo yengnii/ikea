@@ -1,11 +1,11 @@
 .bt_container {
     width: 100%;
     background-color: #f5f5f5;
-    padding: 10px 30px;
+    padding: 30px 30px 15px;
     margin-top: 80px;   
 }
-.bt_container li {
-    margin: 0 10px;
+.bt_container .bt_menu li {
+    padding: 0 10px;
     color: #656565;
 }
 .bt_menu > div {
@@ -20,6 +20,7 @@
 .bt_utilities {
     border-bottom: 1px solid #b6b6b6;
 }
+.sns_box { width: 70%; }
 .sns_box ul{
     display: flex;
     /* justify-content: ; */
@@ -34,31 +35,62 @@
 .sns_box i {
     font-size: 40px;
 }
-.language_selector {
+
+.language_container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 20px;
 }
-.change_country button {
+.language_container button {
     /* border-radius: 20px; */
     padding: 10px;
     border: 1px solid #484848;
     background-color: #fff;
-}
-.langauge_select ul {
-    /* border-radius: 20px; */
-    padding: 10px;
-    border: 1px solid #484848;
-    background-color: #fff;
-}
-.change_language {
-    display: block;
-    transition: .3s;
 }
 
-.change_language:active {
-    display: none;
-    background-color: orange;
+/* select language */
+#select_country{
+    position: relative;
+    /* width: 200px; */
+    width: 75px;
+    height: 40px;
+    /* background-color: rgba( 0, 0, 0, 0.5); */
+    /* overflow: hidden; */
+}
+.language_choice{
+    padding: 10px;
+    border: 1px solid #484848;
+    background-color: #fff;
+    width: 75px;
+    height: 40px;
+    /* background-color: rgba( 255, 0, 0, 0.5); */
+    position: absolute;
+    text-align: center;
+    /* color:#fff;  */
+}
+.language_choice+ul{
+    padding: 6px;
+    border: 1px solid #484848;
+    background-color: #fff;
+    position: absolute;
+    /* transition: .3s; */
+    z-index: -1;
+    bottom: 0;
+}
+.language_choice+ul>li{ 
+    /* width: 200px; */
+    line-height: 40px; 
+    text-align: center;
+    /* background-color: rgba( 0, 255, 0, 0.5); */
+}
+.language_choice+ul>li:hover{
+    /* border-radius: 30px; */
+    color: #fff;
+    background-color: var(--basic-ikea-color);
+}
+.language_choice+ul.active{
+    z-index: 99;
+    bottom: -93px;
 }
 
 .bt_legalLinks ul {

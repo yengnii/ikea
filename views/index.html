@@ -25,7 +25,8 @@
                         <img src="/images/ikea-logo.svg" alt=""></a>
                     </h1>
                     <div class="search_bar">
-                        <span>홈 인테리어 정보, 상품 검색</span>
+                        <input type="text" class="searchbox" placeholder="홈 인테리어 정보, 상품 검색">
+                        </input>
                         <i class='bx bx-search'></i>
                     </div>
                     <div class="register_box">
@@ -267,7 +268,7 @@
                 <div class="event_section">
                     <div class="event_box">
                         <div class="event_img">
-                            <img src="/images/event_img1.jpg" alt="">
+                            <!-- <img src="../public/images/event_img1.jpg" alt=""> -->
                         </div>
                         <div class="event_descript">
                             <h3>IKEA FESTIVAL</h3>
@@ -277,7 +278,7 @@
                     </div>
                     <div class="event_box">
                         <div class="event_img">
-                            <img src="/images/event_img2.jpg" alt="">
+                          <!-- <img src="../public/images/event_img2.jpg" alt=""> -->
                         </div>
                         <div class="event_descript">
                             <h3>곧 만나요! 일부 홈퍼니싱 15% OFF</h3>
@@ -287,7 +288,7 @@
                     </div>
                     <div class="event_box">
                         <div class="event_img">
-                            <img src="/images/event_img3.jpg" alt="">
+                          <!-- <img src="../public/images/event_img3.jpg" alt=""> -->
                         </div>
                         <div class="event_descript">
                             <h3>책과 함께하는 나만의 공간</h3>
@@ -391,17 +392,16 @@
                                     <i class='bx bx-message-rounded-dots' ></i>kakaochannel</a></li>
                             </ul>
                         </div>
-                        <div class="language_selector">
+                        <div class="language_container">
                             <div class="change_country">
                                 <button>국가변경</button>
                             </div>
-                            <div class="langauge_select">
+                            <div class="langauge_select change_language" id="select_country">
+                                <div class="language_choice">언어 선택</div>
+                        
                                 <ul>
-                                    <li class="language_choice">언어선택</li>
-                                </ul>
-                                <ul name="change_language" class="langauge_select change_language" id="select_country">
-                                    <li data-value="./index.html">한국어</li>
-                                    <li data-value="./indexEng.html">English</li>
+                                    <li data-value="./index">한국어</li>
+                                    <li data-value="./indexEng">English</li>
                                 </ul>
                             </div>
                         </div>
@@ -409,13 +409,20 @@
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                         
                         <script>
-                            const choice = document.querySelector('.langauge_select');
-                            const change = document.querySelector('.change_language');
-                            choice.addEventListener('click', function(event){
-                                // event.preventDefault();
-                                change.classList.toggle('active');
-                                // change.style.display = "block";
-                                console.log("click");
+                            var language_toggle = false; 
+                            $('.language_choice').on('click', function(){
+                            console.log('click');
+                            if(!language_toggle){
+                                $('.language_choice+ul').addClass( 'active');
+                            }else{
+                                $('.language_choice+ul').removeClass( 'active');
+                            }
+                            language_toggle = !language_toggle ;
+                            })
+
+                            $('.language_choice+ul>li').on('click', function( ){
+                                console.log( $(this).attr('data-value') );
+                                location.href = $(this).attr('data-value');
                             })
                         </script>
                     </div>
@@ -448,6 +455,6 @@
     <!-- top nav fix script -->
     <script src="script/nav.js"></script>
     <!-- language pack - switch change script -->
-    <script src="script/language.js" ></script>
+    <!-- <script src="script/language.js" ></script> -->
 </body>
 </html>

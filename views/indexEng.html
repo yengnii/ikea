@@ -25,7 +25,8 @@
                         <img src="/images/ikea-logo.svg" alt=""></a>
                     </h1>
                     <div class="search_bar">
-                        <span>what are you looking for ?</span>
+                        <input type="text" class="searchbox" placeholder="what are you looking for ?">
+                        </input>
                         <i class='bx bx-search'></i>
                     </div>
                     <div class="register_box">
@@ -305,7 +306,7 @@
                     <li><a href="#"><img src="/images/service_icon02.jpg" alt=""> <span>gas station pick up service</span></a></li>
                     <li><a href="#"><img src="/images/service_icon03.jpg" alt=""> <span>assembly service</span></a></li>
                     <li><a href="#"><img src="/images/service_icon04.jpg" alt=""> <span>installation service</span></a></li>
-                    <!-- <li><a href="#"><img src="/images/service_icon05.jpg" alt=""> <span>설치 서비스</span></a></li> -->
+                    <li><a href="#"><img src="/images/service_icon05.jpg" alt=""> <span>installation service</span></a></li>
                     <li><a href="#"><img src="/images/service_icon06.jpg" alt=""> <span>kichen planning service</span></a></li>
                     <li class="service_all"><a href="#"><h3>all service</h3><span><i class='bx bx-right-arrow-alt'></i></span></a></li>
                 </ul>
@@ -392,18 +393,39 @@
                                     <i class='bx bx-message-rounded-dots' ></i>kakaochannel</a></li>
                             </ul>
                         </div>
-                        <div class="language_selector">
+                        <div class="language_container">
                             <div class="change_country">
-                                <button>change country</button>
+                                <button>국가변경</button>
                             </div>
-                            <div class="change_language">
-                                <ul name="change_language" id="select_country">
-                                    <li data-value="">select</li>
-                                    <li data-value="./index.html">korea</li>
-                                    <li data-value="./indexEng.html">English</li>
+                            <div class="langauge_select change_language" id="select_country">
+                                <div class="language_choice">언어 선택</div>
+                        
+                                <ul>
+                                    <li data-value="./index">한국어</li>
+                                    <li data-value="./indexEng">English</li>
                                 </ul>
                             </div>
                         </div>
+
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                        
+                        <script>
+                            var language_toggle = false; 
+                            $('.language_choice').on('click', function(){
+                            console.log('click');
+                            if(!language_toggle){
+                                $('.language_choice+ul').addClass( 'active');
+                            }else{
+                                $('.language_choice+ul').removeClass( 'active');
+                            }
+                            language_toggle = !language_toggle ;
+                            })
+
+                            $('.language_choice+ul>li').on('click', function( ){
+                                console.log( $(this).attr('data-value') );
+                                location.href = $(this).attr('data-value');
+                            })
+                        </script>
                     </div>
                     <div class="bt_basic bt_corparea">
                         <div class="bt_copyright">
@@ -412,17 +434,18 @@
                         </div>
                         <div class="bt_legalLinks">
                             <ul>
-                                  <li><a href="#">privacy policy</a></li>
-                                  <li><a href="#">cookie policy</a></li>
-                                  <li><a href="#" >cookie settings</a></li>
-                                  <li><a href="#">terms & conditions</a></li>
+                                  <li><a href="#">개인정보처리방침</a></li>
+                                  <li><a href="#">쿠키 정책</a></li>
+                                  <li><a href="#" >쿠키 설정</a></li>
+                                  <li><a href="#">웹사이트 이용약관</a></li>
                                   <li><a href="#">Responsible disclosure</a></li>
                             </ul>
                           </div>
                     </div>
                     <div class="bt_basic bt_company">
                         <div class="bt_companyinfo">
-                          <p>IKEA KOREA<br>Address : 17 ILJIK-RO, GWANGMYEONG-SI, GYEONGGI-DO 14352<br>Company Registration Number : 106-86-82871 <a href="#">BUSINESS INFO</a><br>Country Retail Manager : Fredrik Johansson<br> Telecommunication Services Registration Number. : 2018-경기광명-0209<br>TEL : 1670-4532</p>
+                          <p>IKEA 코리아<br>주소 : (우) 14352  경기도 광명시 일직로 17 IKEA광명점<br>사업자 등록번호 : 106-86-82871 <a href="#">사업자정보확인</a><br>대표자 : 프레드릭 요한손<br>통신판매업 신고 : 2018-경기광명-0209<br>TEL : 1670-4532</p>
+
                         </div>
                     </div>
                 </div>
