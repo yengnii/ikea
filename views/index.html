@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <style>
+      .hide{ display: none;}
+      .cookie-show {
+        display: flex;
+      }
+    </style>
 </head>
 <body>
     <div id="wrap">
@@ -31,9 +37,34 @@
                     </div>
                     <div class="register_box">
                         <ul>
-                            <li><a href="#">로그인</a></li>
-                            <li><a href="#">회원가입</a></li>
+                            <li id="loginBtn" ><a href="/login">로그인</a></li>
+                            <li id="registerBtn"><a href="#">회원가입</a></li>
+                            <li id="logoutBtn"><a href="#">로그아웃</a></li>
                         </ul>
+                        <script>
+                            const loginBtn = document.querySelector('#loginBtn');
+                            const registerBtn = document.querySelector('#registerBtn');
+                            const logoutBtn = document.querySelector('#logoutBtn');
+  
+                            console.log( document.cookie );
+                            // login 된 경우 저장된 cookie 사용 
+                            if( document.cookie ){
+                              loginBtn.classList.add('hide');
+                              registerBtn.classList.add('hide');
+                              logoutBtn.classList.remove('hide');
+                            }else{
+                              logoutBtn.classList.add('hide');
+                            }
+  
+                            logoutBtn.addEventListener('click', ()=>{
+                                document.cookie = "login=ok; max-age=0";
+                                document.cookie = 'name=kim; max-age=0';
+                                document.cookie = 'keyword=interior; max-age=0';
+                                loginBtn.classList.remove('hide');
+                                registerBtn.classList.remove('hide');
+                                logoutBtn.classList.add('hide');
+                            })
+                        </script>
                     </div>
                 </div>
                 <div class="header_sub_box">
@@ -61,6 +92,93 @@
                 </div>
             </div>
         </header>
+
+        <div class="cookie-box">
+            <p class="close-btn"><span>&times;</span></p>
+            <h3>cookie privacy</h3>
+            <button class="accept">Accept All Cookie</button>
+            <p><input type="checkbox" class="cookieCheck"> 오늘 하루 안보기</p>
+        </div>
+        <style>
+            .active { display: none;}
+            .cookie-box{
+                width: 400px; height: 300px;
+                background-color: var(--basic-ikea-color);
+                color: #fff;
+                position: fixed;
+                right: 50px; bottom: 50px; 
+                padding: 20px;
+                z-index: 9999;
+                display: none;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .cookie-box .close-btn {
+                text-align: right;
+            }
+            .cookie-box > p {
+                text-align: left;
+                font-size: 16px;
+            }
+            .cookie-box > p > span {
+                cursor: pointer;
+            }
+            .cookie-box > h3 {
+                text-align: center;
+                padding: 35px 0;
+            }
+            .cookie-box > .accept {
+                width: 80%;
+                margin: 0 auto;
+                padding: 15px;
+                border-radius: 30px;
+                border: 0px;
+                cursor: pointer;
+            }
+            .cookie-box > .accept:hover {
+                background-color: var(--serve-ikea-color);
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            const cookieBox = document.querySelector('.cookie-box');
+            let cookieCtrl = false;
+            // 내 사이트에 접속 했을 때 회사가 구분하기 위해서도 쿠키 사용
+            document.querySelector('.close-btn').addEventListener('click', function(){
+                // cookieBox.classList.add('hide');
+                cookieBox.style.display = "none";
+            })
+            document.querySelector('.accept').addEventListener('click', function(){
+                document.cookie= "brandName=ikea; max-age:60*60*24*30";
+                // cookieBox.classList.add('hide');
+                cookieBox.style.display = "none";
+            })
+            document.querySelector('.cookieCheck').addEventListener('change', function(){
+                cookieCtrl = !cookieCtrl;
+                if( !cookieCtrl ){
+                    document.cookie= "brandName=ikea; max-age:0";
+                } else {
+                    document.cookie= "brandName=ikea; max-age:60*60*24*30";
+                }
+            })
+
+            function getCookieName(name){
+                // match 정규표현식 중 문자열에서 일치되는 문자열 찾는 함수
+                var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+                return r ? r[1] : '';
+            }
+
+            window.onload = () => {
+                let findName = getCookieName('brandName');
+                console.log(findName);
+                if( findName === 'ikea' ){
+                    cookieBox.style.display = "none";
+                } else {
+                    cookieBox.style.display = "flex";
+                }
+            }
+        </script>
+
         <div id="container">
             <div class="main_banner">
                 <!-- Swiper -->
@@ -88,6 +206,10 @@
                 <!-- Initialize Swiper -->
                 <script>
                     var swiper = new Swiper(".mySwiper", {
+                    autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                    },
                     pagination: {
                         el: ".swiper-pagination",   
                         dynamicBullets: true,                     

@@ -4,9 +4,204 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-</head>
-<body>
-    <h1>login</h1>
-</body>
+    <title>IKEA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/login.css">
+  </head>
+  <body>
+    <div id="wrap">
+        <header class="header">
+            <div class="header_box">
+                <div class="header_main_box">
+                    <h1><a href="/">
+                        IKEA
+                        <img src="/images/ikea-logo.svg" alt=""></a>
+                    </h1>
+                    <div class="search_bar">
+                        <input type="text" class="searchbox" placeholder="홈 인테리어 정보, 상품 검색">
+                        </input>
+                        <i class='bx bx-search'></i>
+                    </div>
+                    <div class="register_box">
+                        <ul>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header_sub_box">
+                    <div class="nav top_nav">
+                        <ul>
+                            <li><a href="#">침실</a></li>
+                            <li><a href="#">거실</a></li>
+                            <li><a href="#">주방</a></li>
+                            <li><a href="#">다이닝</a></li>
+                            <li><a href="#">어린이</a></li>
+                            <li><a href="#">욕실</a></li>
+                            <li><a href="#">홈오피스</a></li>
+                            <li><a href="#">현관</a></li>
+                            <li><a href="#">야외공간</a></li>
+                            <li><a href="/sub">IKEA for Business</a></li>
+                        </ul>
+                    </div>
+                    <div class="top_member top_nav">
+                        <ul>
+                            <!-- <li><a href="#">주문조회</a></li> -->
+                            <li><a href="#"><i class='bx bx-heart'></i></a></li>
+                            <li><a href="#"><i class='bx bx-cart'></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="login-container content" >
+      <form class="signup" name="loginForm">
+        <div class="signup-container">
+          <label for="exampleInputEmail1" class="form-label">회원 로그인</label>
+          <input type="text" class="form-control" id="id" placeholder="아이디" aria-describedby="emailHelp" name="id">
+          <input type="password" class="form-control" id="pw" placeholder="비밀번호"  name="pw">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">아이디 저장</label>
+          </div>
+          <button type="submit" class="btn btn-primary" id="loginSubmit">로그인</button>
+        </div>
+      </form>        
+      <!-- <div class="sns-login">
+        <a href="#">
+            네이버 아이디로 로그인
+        </a>
+        <a href="#">
+            카카오 아이디로 로그인
+        </a>
+      </div> -->
+      <div class="btn-login ">
+        <button type="submit" class="btn btn-primary">회원가입</button>
+        <button type="submit" class="btn btn-primary">아이디 찾기</button>
+        <button type="submit" class="btn btn-primary">비밀번호 찾기</button>
+      </div>
+    </div>
+    <script>
+      const loginSubmit = document.querySelector('#loginSubmit');
+      loginSubmit.addEventListener('click', (event)=>{
+            event.preventDefault();
+
+            //console.log(document.querySelector('#inputId').value);
+            //console.log(loginForm.id.value);
+            // name속성은  server 데이터를 주고 받기 위한 속성
+
+            fetch('http://localhost:3000/login', {
+                method: 'POST',
+                body: JSON.stringify({ id:id.value, pw:pw.value }),
+                headers:{ 
+                  'Content-type' : 'application/json;charset=UTF-8'
+                }
+            }).then( res => res.json())
+            .then( json=>{
+                console.log( json.success );
+                // console.log( json.message );
+                
+                if( json.success ){
+                    document.cookie = 'login=ok';
+                    document.cookie = 'name=kim';
+                    document.cookie = 'keyword=interior';
+
+                    location.replace('http://localhost:3000/');
+                    //location.href = 'http://localhost:3500/' ;
+                      // 리다이렉트 : index.html
+                }else{
+                    alert( json.message );
+                }
+            })
+      })
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+  <script src="/script/login.js"></script>
+
+  <footer>
+    <div class="bt_container">
+        <div class="bt_menu">
+            <div class="bt_basic bt_utilities">
+                <div class="sns_box">
+                    <ul>
+                        <li><a href="#">
+                            <i class='bx bxl-facebook-circle' ></i>facebook</a></li>
+                        <li><a href="#">
+                            <i class='bx bxl-instagram' ></i>instargram</a></li>
+                        <li><a href="#">
+                            <i class='bx bxl-youtube' ></i>youtube</a></li>
+                        <li><a href="#">
+                            <i class='bx bx-message-rounded-dots' ></i>kakaochannel</a></li>
+                    </ul>
+                </div>
+                <div class="language_container">
+                    <div class="change_country">
+                        <button>국가변경</button>
+                    </div>
+                    <div class="langauge_select change_language" id="select_country">
+                        <div class="language_choice">언어 선택</div>
+                
+                        <ul>
+                            <li data-value="./index">한국어</li>
+                            <li data-value="./indexEng">English</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                
+                <script>
+                    var language_toggle = false; 
+                    $('.language_choice').on('click', function(){
+                    console.log('click');
+                    if(!language_toggle){
+                        $('.language_choice+ul').addClass( 'active');
+                    }else{
+                        $('.language_choice+ul').removeClass( 'active');
+                    }
+                    language_toggle = !language_toggle ;
+                    })
+
+                    $('.language_choice+ul>li').on('click', function( ){
+                        console.log( $(this).attr('data-value') );
+                        location.href = $(this).attr('data-value');
+                    })
+                </script>
+            </div>
+            <div class="bt_basic bt_corparea">
+                <div class="bt_copyright">
+                    <p>© Inter IKEA Systems B.V 1999-2022
+                    </p>
+                </div>
+                <div class="bt_legalLinks">
+                    <ul>
+                          <li><a href="#">개인정보처리방침</a></li>
+                          <li><a href="#">쿠키 정책</a></li>
+                          <li><a href="#" >쿠키 설정</a></li>
+                          <li><a href="#">웹사이트 이용약관</a></li>
+                          <li><a href="#">Responsible disclosure</a></li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="bt_basic bt_company">
+                <div class="bt_companyinfo">
+                  <p>IKEA 코리아<br>주소 : (우) 14352  경기도 광명시 일직로 17 IKEA광명점<br>사업자 등록번호 : 106-86-82871 <a href="#">사업자정보확인</a><br>대표자 : 프레드릭 요한손<br>통신판매업 신고 : 2018-경기광명-0209<br>TEL : 1670-4532</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>

@@ -1,0 +1,72 @@
+.login-container {
+    width: 50%;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    padding: 100px 30px;
+    font-size: 16px;
+}
+.signup-container {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+.form-label {
+    text-align: center;
+    font-size: 24px;
+}
+.idbox {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.form-check {
+    display: flex;
+    gap: 5px;
+}
+.form-check > * {
+    margin: 5px 0;
+}
+.login-container input {
+    padding: 15px;
+    border: 0px;
+    border-bottom: 1px solid  var(--basic-ikea-color);
+}
+.login-container button {
+    padding: 15px;
+    background-color: var(--basic-ikea-color);
+    border: 0px;
+    color: #fff;
+    border-radius: 30px;
+}
+.sns-login {
+    width: 50%;
+    margin: 0 auto;
+    /* padding: 30px; */
+    font-size: 16px;
+}
+.sns-login > a {
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.btn-login {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-login button {
+    padding: 20px 18px;
+    background-color: #fff;
+    border: 0.5px solid var(--basic-ikea-color);
+    color: black;
+    border-radius: 0px;
+}
