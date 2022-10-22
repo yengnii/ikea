@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
   </head>
   <body>
     <div id="wrap">
@@ -32,8 +33,8 @@
                     </div>
                     <div class="register_box">
                         <ul>
-                            <li><a href="#">로그인</a></li>
-                            <li><a href="#">회원가입</a></li>
+                            <li id="loginBtn" ><a href="/login">로그인</a></li>
+                            <li id="registerBtn"><a href="#">회원가입</a></li>
                         </ul>
                     </div>
                 </div>
@@ -85,11 +86,11 @@
             카카오 아이디로 로그인
         </a>
       </div> -->
-      <div class="btn-login ">
-        <button type="submit" class="btn btn-primary">회원가입</button>
-        <button type="submit" class="btn btn-primary">아이디 찾기</button>
-        <button type="submit" class="btn btn-primary">비밀번호 찾기</button>
-      </div>
+          <div class="btn-login ">
+            <button type="submit" class="btn btn-primary">회원가입</button>
+            <button type="submit" class="btn btn-primary btn-user">아이디 찾기</button>
+            <button type="submit" class="btn btn-primary btn-user">비밀번호 찾기</button>
+          </div>
     </div>
     <script>
       const loginSubmit = document.querySelector('#loginSubmit');

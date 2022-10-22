@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const dotenv = require('dotenv');
+dotenv.config();
 
 const users = [
     { id:'test01', pw:'12345'},
@@ -14,12 +16,14 @@ const cors = require('cors');
 app.use(cors());
 
 const path = require('path');
+const { config } = require('dotenv');
 
 
 app.use( express.json());
 app.use( express.urlencoded({extended:false}));
 // app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
 
 app.get('/', (req, res)=> {
     res.sendFile(path.join(__dirname, 'views' + '/index.html' ));

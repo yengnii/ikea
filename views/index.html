@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
     <style>
       .hide{ display: none;}
       .cookie-show {
@@ -94,38 +95,52 @@
         </header>
 
         <div class="cookie-box">
-            <p class="close-btn"><span>&times;</span></p>
-            <h3>cookie privacy</h3>
+            <div class="cookie-content">
+                <p class="close-btn"><span>&times;</span></p>
+                <h3>This website uses cookies</h3>
+                <p class="cookie-descript">We use cookies to improve user experience. Choose what cookies you allow us to use. You can read more about our Cookie Policy in our Privacy policy</p>
+            </div>
             <button class="accept">Accept All Cookie</button>
             <p><input type="checkbox" class="cookieCheck"> 오늘 하루 안보기</p>
         </div>
         <style>
             .active { display: none;}
             .cookie-box{
-                width: 400px; height: 300px;
-                background-color: var(--basic-ikea-color);
-                color: #fff;
+                width: 250px; height: 300px;
+                /* background-color: var(--basic-ikea-color); */
+                background-color: #fff;
+                box-shadow: 1px 1px 4px 4px var(--basic-ikea-color);
+                border-radius: 10px;
+                /* color: #fff; */
                 position: fixed;
                 right: 50px; bottom: 50px; 
-                padding: 20px;
+                padding: 10px 20px 20px;
                 z-index: 9999;
                 display: none;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: space-around;
             }
             .cookie-box .close-btn {
-                text-align: right;
-            }
-            .cookie-box > p {
-                text-align: left;
                 font-size: 16px;
+                text-align: right;
+                cursor: pointer;
+            }
+            .cookie-header {
+                display: flex;
+                justify-content: space-between;
+            }
+            .cookie-box p {
+                text-align: left;
+                font-size: 12px;
+            }
+            .cookie-descript {
+                padding-top: 10px;
             }
             .cookie-box > p > span {
                 cursor: pointer;
             }
             .cookie-box > h3 {
                 text-align: center;
-                padding: 35px 0;
             }
             .cookie-box > .accept {
                 width: 80%;
@@ -134,10 +149,10 @@
                 border-radius: 30px;
                 border: 0px;
                 cursor: pointer;
+                font-weight: bold;
             }
             .cookie-box > .accept:hover {
                 background-color: var(--serve-ikea-color);
-                font-weight: bold;
             }
         </style>
         <script>

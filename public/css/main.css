@@ -27,7 +27,6 @@ header {
   /* display: flex;
   justify-content: space-between;
   align-items: center; */
-
 }
 .fixedNav{
   position: fixed;
@@ -59,7 +58,6 @@ header {
 .search_bar > * {
   font-size: 16px;
   line-height: 40px;
-
 }
 .searchbox {
   width: 95%;
@@ -72,7 +70,6 @@ header {
 .search_bar i {
   width: 5%;
   display: block;
-
 }
 .register_box {
   margin-left: auto;
@@ -294,7 +291,7 @@ header {
   font-size: 30px;
   text-align: center;
   line-height: 50px;
-  margin-left: 15px;
+  margin-left: 100px;
 }
 
 /* event_container */
@@ -322,8 +319,12 @@ header {
   width: 100%;
   height: 300px;
   overflow: hidden;
-  background-size: cover;
+  background-size: 100%;
   background-position: center ;
+  transition:all 0.5s ease;
+}
+.event_box .event_img:hover {
+  background-size: 120%;
 }
 .event_box:nth-child(1) .event_img{
   background-image: url(/images/event_img1.jpg);
@@ -364,8 +365,188 @@ header {
   line-height: 50px;
   display: block;
   position: absolute;
+  right: 20px;
   bottom: 20px;
 }
 .event_box .event_descript i {
   color: black;
+}
+
+
+
+@media screen and (max-width: 1003px) {
+  .search_bar {
+      width: 250px;
+      height: 40px;
+  }
+  .search_bar > * {
+    font-size: 12px;
+  }
+  .register_box li {
+      font-size: 12px;
+      padding: 0 18px 0;
+  }
+  .top_nav li {
+      padding: 0px 8px;
+      line-height: 20px;
+      font-size: 12px;
+  }
+  .event_section {
+    gap: 10px;
+  }
+  .event_box .event_img {
+    width: 100%;
+    height: 150px;
+  }
+  .event_box .event_descript {
+    height: 120px;
+    padding: 15px;
+  }
+  .event_box .event_descript h3 {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .event_box .event_descript p {
+    display: none;
+  }
+  .event_box .event_descript span {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 960px) {
+  #wrap {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }  
+  .main_banner {
+      height: 400px;
+  }
+  .contents h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+  }
+  .bl_box:last-child{
+      display: none;
+  }
+  .mySwiper02 .swiper-wrapper {
+    padding-bottom: 20px;
+  }
+  .mySwiper02 .swiper-slide {
+    width: 150px;
+    height: 100px;
+  }  
+  .service_container li {
+    height: 100%;
+  }
+  .service_container li:last-child {
+    height: 125px;
+  }
+  .service_container span {
+    width: 75%;
+    font-size: 12px;
+    top: 60%;
+  }
+  .service_container li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .service_all {
+    /* width: 50px; */
+  }
+  .service_all h3 {
+    font-weight: 500;
+    margin: 20px 15px;
+    font-size: 12px;
+    text-decoration: underline; 
+    color: white;
+  }
+  .service_all a span{
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 830px) {
+  .top_nav li {
+    padding: 0px 5px;
+    line-height: 20px;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .register_box li {
+      line-height: 30px;
+      font-size: 10px;
+      padding: 0 18px 0;
+      /* border: 1px solid black; */
+  }
+  .register_box li:nth-child(1) {
+      height: 30px;
+      line-height: 25px;
+  }
+  .search_bar {
+      width: 250px;
+      height: 30px;
+  }
+  .search_bar > * {
+    font-size: 10px;
+  }
+  .header_main_box{
+    height: 30px;
+  }
+  .header_main_box h1 img{
+    display: block;
+    width: 80px;
+  }
+  .search_bar {
+    display: none;
+  }
+  .main_banner {
+      height: 350px;
+  }
+  .bl_title {
+    font-size: 12px;
+  }
+  .bl_price {
+    font-size: 15px;
+  }
+  .event_box .event_img {
+    height: 120px;
+  }
+  .event_box .event_descript {
+    height: 80px;
+    padding: 10px;
+  }
+  .event_box .event_descript h3 {
+    font-size: 12px;
+  }
+  .event_box .event_descript span {
+    width: 25px;
+    height: 25px;
+    right: 10px;
+    line-height: 25px;
+    font-size: 15px;
+  }
+  .service_container span {
+    width: 60%;
+    font-size: 12px;
+    top: 60%;
+  }
+  .service_container li:nth-child(4)~ * {
+    display: none;
+  }
+  .service_container li:last-child {
+    display: block;
+  }
+  .service_all a span{
+    margin-left: 40px;
+  }
 }
