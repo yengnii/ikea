@@ -82,10 +82,11 @@ hover 애니메이션, 시각 자극 애니메이션 등.., O
 git upload command
  - git add .
  - git commit -m "메세지내용"
- - git push orign main 
+ - git push origin main 
 
 ```
 
 # finished
 <img src = "public/images/ikea.png">
-<a href="https://ikea-project.herokuapp.com/">
+<img src = "public/images/loginpage.png">
+<a href="https://ikea-project.herokuapp.com/">ikea-project.herokuapp.com</a>
